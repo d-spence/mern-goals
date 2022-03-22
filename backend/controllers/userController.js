@@ -6,9 +6,17 @@ const User = require('../models/userModel');
 
 // @desc    Get user data
 // @route   GET /api/users/me
-// @access  Public
+// @access  Private
 const getUser = asyncHandler(async (req, res) => {
-  res.status(200).json(req.body);
+  const { _id, name, email } = await User.findById(req.user.id);
+
+  res.status(200).json({
+    id: _id,
+    name,
+    email,
+  });
+
+  res.status(200).json({ message: 'Get user data' });
 });
 
 
