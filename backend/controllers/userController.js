@@ -75,7 +75,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
   // Check for user email and password match
   if (user && (await bcrypt.compare(password, user.password))) {
-    res.json({
+    res.status(201).json({
       _id: user.id,
       name: user.name,
       email: user.email,
