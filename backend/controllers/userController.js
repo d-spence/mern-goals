@@ -88,13 +88,6 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc    Logout current user
-// @route   POST /api/users/logout
-// @access  Public
-const logoutUser = asyncHandler(async (req, res) => {
-  res.status(200).json({ message: 'UNFINISHED: Logout current user'});
-});
-
 // Generate JWT
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -107,5 +100,4 @@ module.exports = {
   getUser,
   registerUser,
   loginUser,
-  logoutUser,
 }
