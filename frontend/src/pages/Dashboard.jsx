@@ -51,7 +51,9 @@ const Dashboard = () => {
               return <GoalItem key={goal._id} goal={goal} />;
             })}
           </div>
-        ) : (<h3>You have not set any goals :(</h3>) }
+        ) : (
+          <h3>You have not set any goals :(</h3>
+        )}
       </section>
     </>
   );

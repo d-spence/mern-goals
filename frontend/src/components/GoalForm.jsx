@@ -35,4 +35,5 @@ const GoalForm = () => {
     </section>
   );
 }
+
 export default GoalForm;
